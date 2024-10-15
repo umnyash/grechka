@@ -1,0 +1,30 @@
+include ../data/data
+include ../components/components
+
+doctype html
+html.page(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='preload' href='fonts/lato-400.woff2' as='font' type='font/woff2' crossorigin)
+    link(rel='preload' href='fonts/lato-700.woff2' as='font' type='font/woff2' crossorigin)
+    link(rel='preload' href='fonts/lato-900.woff2' as='font' type='font/woff2' crossorigin)
+    link(rel='stylesheet' href='vendor/swiper/swiper-bundle.min.css')
+    link(rel='stylesheet' href='css/style.min.css')
+    link(rel='icon' href='favicon.ico')
+    link(rel='icon' href='img/favicons/favicon.svg' type='image/svg+xml')
+    link(rel='apple-touch-icon' href='img/favicons/favicon-180.png')
+    link(rel='manifest' href='manifest.webmanifest')
+    title Grechka — креативная веб-дизайн студия
+    meta(name='description' content='Свежий и современный стиль. Мы делаем сильные проекты.')
+    meta(name='keywords' content='Web-разработка, разработка мобильных приложений, продвижение сайтов, дизайн сайтов, Битрикс24, CMS.')
+  body.page__body
+    .page__inner
+      +site-header(class='page__site-header')
+      main.page__content
+        block content
+      +site-footer(class='page__site-footer')
+    block modals
+    script(src='vendor/swiper/swiper-bundle.min.js')
+    script(src='vendor/pristine/pristine.min.js')
+    script(src='js/script.js')

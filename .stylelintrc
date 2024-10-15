@@ -1,0 +1,6 @@
+{
+  "extends": "stylelint-config-htmlacademy",
+  "ignoreFiles": [
+    "source/sass/global/normalize.scss"
+  ]
+}
