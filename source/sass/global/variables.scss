@@ -1,2 +1,20 @@
+// Viewports
+$mobile-width: 375px;
+$tablet-width: 768px;
+$wide-tablet-width: 1024px;
+$laptop-width: 1280px;
+$desktop-width: 1440px;
+$wide-desktop-width: 1920px;
+
 // Fonts
 $main-font-family: "Lato", "Arial", sans-serif;
+
+// Sizes
+$centerer-max-width: 1680px;
+
+// Timings
+$duration-xs: 200ms;
+$duration-s: 300ms;
+$duration-m: 400ms;
+$duration-l: 500ms;
+$duration-xxl: 1000ms;

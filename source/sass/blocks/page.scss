@@ -1,0 +1,34 @@
+.page__body {
+  min-width: 360px;
+  margin: 0;
+  font: 400 16px/22px $main-font-family;
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  @media (min-width: $wide-desktop-width) {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.page__inner {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  box-sizing: border-box;
+  // height: 100vh;
+  flex-direction: column;
+  overflow-y: auto;
+
+  @supports (height: 100dvh) {
+    // height: 100dvh;
+  }
+}
+
+.page__site-header {
+  margin: 0 0 32px;
+}
+
+.page__content {
+  flex-grow: 1;
+}

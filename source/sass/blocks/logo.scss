@@ -1,0 +1,26 @@
+.logo {
+  --logo-color: currentColor;
+
+  display: block;
+  color: inherit;
+}
+
+.logo__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.logo[href] {
+  transition: color $duration-s ease-in-out;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  &:active {
+    color: var(--accent-color);
+    transition-duration: $duration-xs;
+  }
+}

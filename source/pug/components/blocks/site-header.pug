@@ -1,2 +1,11 @@
 mixin site-header
-  header.site-header&attributes(attributes) Site Header
+  header.site-header&attributes(attributes)
+    .container
+      .site-header__inner
+        +logo(class='site-header__logo')
+        .site-header__contacts
+          .site-header__contacts-text Студия web-разработки и продвижения
+          a.site-header__contacts-link.site-header__contacts-link--phone(href='tel:+78314164009') +7(831)416-40-09
+          a.site-header__contacts-link.site-header__contacts-link--phone(href='tel:+79307117110') +7(930)711-711-0
+          a.site-header__contacts-link.site-header__contacts-link--email(href='mailto:ede@deremin.ru') ede@deremin.ru
+        +site-navigation(class='site-header__navigation')

@@ -1,3 +1,27 @@
+:root {
+  --text-color: #454965;
+  --text-additional-color: #7479a6;
+  --text-light-color: #ffffff;
+  --background-color: #ffffff;
+  --background-dark-color: #454965;
+  --background-additional-color: #ebf6f2;
+  --accent-color: #47cc54;
+
+  --edge-indent: 16px;
+
+  @media (min-width: $tablet-width) {
+    --edge-indent: 24px;
+  }
+
+  @media (min-width: $laptop-width) {
+    --edge-indent: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    --edge-indent: 120px;
+  }
+}
+
 button {
   color: #0000ff;
 }

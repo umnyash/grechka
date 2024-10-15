@@ -1,0 +1,113 @@
+.site-header {
+  padding: 20px 0 0;
+  font: 400 14px/18px $main-font-family;
+  background: var(--background-additional-color);
+}
+
+.site-header__inner {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 47px 41px;
+  }
+
+  @media (min-width: $desktop-width) {
+    row-gap: 73px;
+  }
+}
+
+.site-header__logo {
+  width: 174px;
+  margin: 0 0 15px;
+}
+
+
+.site-header__contacts {
+  display: grid;
+  row-gap: 4px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 1px;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    grid-auto-flow: dense;
+    column-gap: 20px;
+  }
+}
+
+.site-header__contacts-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 0 7px;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 16px;
+    margin: 0 9px 2px 1px;
+    background: url("../img/icons.svg#quotes");
+
+    @media (min-width: $tablet-width) {
+      position: absolute;
+      top: 6px;
+      right: 100%;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.site-header__contacts-link {
+  display: block;
+  font-weight: 900;
+  color: inherit;
+  text-decoration-color: transparent;
+  transition-property: color, text-decoration-color;
+  transition-duration: $duration-s;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  &:active {
+    color: var(--accent-color);
+    text-decoration-color: currentColor;
+    transition-duration: $duration-xs;
+    transition-timing-function: ease-in;
+  }
+}
+
+.site-header__contacts-link--phone {
+  @media (max-width: ($tablet-width - 1)) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / 2;
+  }
+}
+
+.site-header__contacts-link--email {
+  margin-top: 3px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}
+
+.site-header__navigation {
+  margin: 47px 0 0;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}

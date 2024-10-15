@@ -1,0 +1,6 @@
+@mixin container {
+  max-width: $centerer-max-width;
+  padding: 0 var(--edge-indent);
+  margin-right: auto;
+  margin-left: auto;
+}
