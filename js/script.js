@@ -1,7 +1,6 @@
-"use strict";
-
 /* * * * * * * * * * * * * * * * * * * * * * * *
  * main.js
  */
-alert('Grechka');
+// alert('Grechka');
 /* * * * * * * * * * * * * * * * * * * * * * * */
+"use strict";
