@@ -10,6 +10,7 @@
   width: 100%;
   height: auto;
   max-height: 100%;
+  transition: transform $duration-xs ease-in;
 }
 
 .logo[href] {
@@ -22,5 +23,9 @@
   &:active {
     color: var(--accent-color);
     transition-duration: $duration-xs;
+
+    .logo__image {
+      transform: scale(0.96);
+    }
   }
 }

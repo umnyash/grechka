@@ -1,0 +1,29 @@
+.social-link {
+  display: inline-block;
+  text-decoration: none;
+  color: currentColor;
+  transition: color $duration-s ease-in-out;
+
+  &:active .social-link__icon {
+    transform: scale(0.85);
+  }
+}
+
+.social-link__icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: currentColor;
+  mask-size: contain;
+  mask-position: center;
+  transition: transform $duration-xs ease-in;
+}
+
+.social-link--light {
+  color: var(--text-light-additional-color);
+
+  &:hover,
+  &:active {
+    color: var(--text-light-color);
+  }
+}

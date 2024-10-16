@@ -1,0 +1,16 @@
+mixin social-link(type)
+  case type
+    when 'telegram'
+      a.social-link(
+        href='http://t-do.ru/@DEEremin'
+        target='_blank'
+        rel='noopener'
+      )&attributes(attributes)
+        span.social-link__icon(style='mask-image: url("img/icons.svg#socials_telegram")' role='img' aria-label='Telegram')
+    when 'instagram'
+      a.social-link(
+        href='#'
+        target='_blank'
+        rel='noopener'
+      )&attributes(attributes)
+        span.social-link__icon(style='mask-image: url("img/icons.svg#socials_instagram")' role='img' aria-label='Instagram')

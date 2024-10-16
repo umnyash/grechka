@@ -1,0 +1,320 @@
+.site-footer {
+  padding: 56px 0 20px;
+  font: 400 12px/16px $main-font-family;
+  color: var(--text-light-color);
+  background: var(--background-dark-color);
+}
+
+.site-footer__top {
+  display: grid;
+  margin: 0 0 48px;
+  grid-template-columns: auto 1fr;
+  gap: 25px;
+
+  @media (min-width: $mobile-width) {
+    column-gap: 39px;
+  }
+
+  @media (min-width: $wide-tablet-width) {
+    gap: 16px 60px;
+  }
+}
+
+.site-footer__logo {
+  width: 130px;
+
+  @media (min-width: $desktop-width) {
+    width: 174px;
+  }
+}
+
+.site-footer__description {
+  display: flex;
+  max-width: 200px;
+  margin: 1px 0 0;
+  align-items: center;
+  color: var(--text-light-additional-color-2);
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 16px;
+    flex-shrink: 0;
+    margin: 0 9px 2px 1px;
+    background: currentColor;
+    mask: url("../img/icons.svg#quotes");
+  }
+}
+
+.site-footer__navigation {
+  grid-column: 1 / -1;
+  max-width: 654px;
+
+  @media (min-width: $wide-tablet-width) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    justify-self: end;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  @media (min-width: $laptop-width) {
+    margin-right: 70px;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    margin: 0;
+  }
+}
+
+.site-footer__middle {
+  @media (min-width: $laptop-width) {
+    outline: 1px solid var(--border-light-color);
+  }
+}
+
+.site-footer__middle-inner {
+  display: grid;
+  gap: 1px;
+
+  @media (min-width: $laptop-width) {
+    @include container;
+
+    grid-template-columns: auto 1fr 1fr;
+  }
+}
+
+.site-footer__socials {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 1px;
+}
+
+.site-footer__socials-item {
+  display: flex;
+  min-height: 80px;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid var(--border-light-color);
+
+  @media (min-width: $laptop-width) {
+    width: 110px;
+  }
+}
+
+.site-footer__address {
+  display: flex;
+  padding: 23px var(--edge-indent);
+  margin: 0;
+  justify-content: center;
+  outline: 1px solid var(--border-light-color);
+
+  @media (min-width: $laptop-width) {
+    padding: 30px;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    padding: 27px;
+  }
+}
+
+.site-footer__address-link {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 8px;
+  text-decoration: none;
+  color: var(--text-light-additional-color-4);
+
+  &::before {
+    content: "";
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    width: 32px;
+    height: 32px;
+    background: var(--text-light-additional-color-5);
+    mask: url("../img/icons.svg#location");
+    transform-origin: right center;
+    transition: background-color $duration-s ease-in-out, transform $duration-xs ease-in;
+  }
+}
+
+.site-footer__address-link > * {
+  grid-column: 2 / 3;
+}
+
+.site-footer__address-accent {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: var(--text-light-additional-color-3);
+  transition: color $duration-s ease-in-out;
+
+  @media (min-width: $desktop-width) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.site-footer__address-link[href] {
+  &:hover {
+    .site-footer__address-accent {
+      color: var(--accent-color);
+    }
+
+    &::before {
+      background: var(--text-light-color);
+    }
+  }
+
+  &:active {
+    .site-footer__address-accent {
+      color: var(--accent-color);
+    }
+
+    &::before {
+      background: var(--text-light-color);
+      transform: scale(0.85);
+    }
+  }
+}
+
+.site-footer__contacts {
+  display: grid;
+  padding: 23px var(--edge-indent);
+  margin: 0;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 8px;
+  color: var(--text-light-additional-color-4);
+  outline: 1px solid var(--border-light-color);
+
+  @media (min-width: $laptop-width) {
+    padding: 30px;
+    outline: none;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    padding: 27px;
+  }
+
+  &::before {
+    content: "";
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    width: 32px;
+    height: 32px;
+    background: var(--text-light-additional-color);
+    mask: url("../img/icons.svg#phone");
+    transform-origin: right center;
+    transition: background-color $duration-s ease-in-out, transform $duration-xs ease-in;
+  }
+
+  &:hover::before {
+    background-color: var(--text-light-color);
+  }
+
+  &:active::before {
+    background-color: var(--text-light-color);
+    transform: scale(0.85);
+  }
+}
+
+.site-footer__contacts-link {
+  font-size: 10px;
+  line-height: 14px;
+  text-decoration-color: transparent;
+  color: var(--text-light-additional-color-3);
+  transition-property: color, text-decoration-color;
+  transition-duration: $duration-s;
+  transition-timing-function: ease-in-out;
+
+  @media (min-width: $desktop-width) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &[href]:hover {
+    color: var(--accent-color);
+  }
+
+  &[href]:active {
+    color: var(--accent-color);
+    text-decoration-color: currentColor;
+    transition-duration: $duration-xs;
+    transition-timing-function: ease-in;
+  }
+}
+
+.site-footer__contacts-link:first-child {
+  position: relative;
+  margin-right: 12px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    bottom: 2px;
+    right: -11px;
+    width: 1px;
+    background: var(--text-light-additional-color-3);
+  }
+}
+
+.site-footer__contacts-text {
+  grid-column: 2 / 4;
+}
+
+.site-footer__bottom {
+  padding: 16px 0 0;
+
+  @media (min-width: $laptop-width) {
+    padding-top: 18px;
+  }
+}
+
+.site-footer__bottom-inner {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  column-gap: 44px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    column-gap: 48px;
+  }
+
+  @media (min-width: $laptop-width) {
+    grid-template-columns: 173px 1fr;
+  }
+}
+
+.site-footer__copyright {
+  margin: 0;
+  text-decoration: none;
+  color: var(--text-light-additional-color-6);
+}
+
+.site-footer__user-agreement {
+  text-decoration-color: transparent;
+  color: var(--text-light-additional-color-6);
+  transition-property: color, text-decoration-color;
+  transition-duration: $duration-s;
+  transition-timing-function: ease-in-out;
+
+  &[href]:hover {
+    color: var(--text-light-color);
+  }
+
+  &[href]:active {
+    color: var(--text-light-color);
+    text-decoration-color: currentColor;
+    transition-duration: $duration-xs;
+    transition-timing-function: ease-in;
+  }
+}

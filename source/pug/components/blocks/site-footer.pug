@@ -1,2 +1,25 @@
 mixin site-footer
-  footer.site-footer&attributes(attributes) Site Footer
+  footer.site-footer&attributes(attributes)
+    .site-footer__top.container
+      +logo(class='site-footer__logo')
+      .site-footer__description Студия web-разработки и&nbsp;продвижения
+      +footer-navigation(class='site-footer__navigation')
+    .site-footer__middle
+      .site-footer__middle-inner
+        ul.site-footer__socials
+          li.site-footer__socials-item
+            +social-link('telegram')(class='social-link--light')
+          li.site-footer__socials-item
+            +social-link('instagram')(class='social-link--light')
+        p.site-footer__address
+          a.site-footer__address-link(target='_blank' rel='nofollow noopener')
+            span.site-footer__address-accent Нижний Новгород
+            | ТЦ Фантастика, 2 этаж, lorem upsum
+        p.site-footer__contacts
+          a.site-footer__contacts-link(href='tel:+78314164009') +7(831)416-40-096
+          a.site-footer__contacts-link(href='tel:+79056664009') +7(905)666-40-09
+          span.site-footer__contacts-text Viber, WhatsApp, Telegram
+    .site-footer__bottom
+      .site-footer__bottom-inner.container
+        p.site-footer__copyright Права защищены 2024
+        a.site-footer__user-agreement(href='#' target='_blank') Пользовательское соглашение

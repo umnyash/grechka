@@ -1,4 +1,5 @@
 @mixin container {
+  box-sizing: border-box;
   max-width: $centerer-max-width;
   padding: 0 var(--edge-indent);
   margin-right: auto;
