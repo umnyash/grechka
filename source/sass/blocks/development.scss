@@ -1,0 +1,114 @@
+.development {
+  font: 400 16px/24px $main-font-family;
+}
+
+.development__section + .development__section {
+  margin-top: 42px;
+}
+
+.development__section-heading {
+  margin: 0 0 18px;
+  font-size: 32px;
+  line-height: 45px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  opacity: 0.2;
+
+  @media (min-width: $tablet-width) {
+    line-height: 34px;
+  }
+
+  &::before {
+    content: "#";
+  }
+}
+
+.development__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 22px;
+}
+
+.development__list-item + .development__list-item {
+  margin-top: 16px;
+}
+
+.development__cases {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: auto auto;
+    column-gap: 90px;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+.development__cases-item {
+  display: grid;
+  row-gap: 4px;
+  justify-items: start;
+}
+
+.development__case-title {
+  order: 2;
+  margin: 0;
+  font-size: 12px;
+  line-height: 17px;
+  opacity: 0.6;
+}
+
+.development__case-link {
+  position: relative;
+  line-height: 22px;
+  text-decoration: none;
+  color: var(--text-additional-color);
+  transition: color $duration-s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+    height: 1px;
+    background: currentColor;
+    transition-property: background-color, transform;
+    transition-duration: $duration-xs;
+    transition-timing-function: ease-in;
+  }
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  &:active {
+    text-decoration-color: transparent;
+    color: var(--accent-color);
+    transition-duration: $duration-xs;
+    transition-timing-function: ease-in;
+
+    &::before {
+      background-color: transparent;
+      transform: translateY(-4px);
+    }
+  }
+}
+
+.development__button {
+  width: 100%;
+  margin: 40px 0 16px;
+
+  @media (min-width: $laptop-width) {
+    max-width: 400px;
+  }
+}
+
+.development__text {
+  margin: 0;
+}

@@ -2,13 +2,22 @@
   padding: 20px 0 0;
   font: 400 14px/18px $main-font-family;
   background: var(--background-additional-color);
+
+  @media (min-width: $laptop-width) {
+    visibility: hidden;
+  }
 }
 
 .site-header__inner {
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 47px 41px;
+    gap: 47px 86px;
+  }
+
+  @media (min-width: $laptop-width) {
+    max-width: 580px;
+    visibility: visible;
   }
 
   @media (min-width: $desktop-width) {
@@ -109,6 +118,7 @@
   margin: 47px 0 0;
 
   @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
     margin: 0;
   }
 }

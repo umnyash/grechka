@@ -1,0 +1,57 @@
+-
+  const devCases = [
+    {
+      title: 'Интернет-магазины плитки',
+      link: 'www.studioardo.ru',
+      href: 'http://www.studioardo.ru'
+    },
+    {
+      title: 'Интернет-магазины плитки',
+      link: 'www.geotar-med.ru',
+      href: 'http://www.geotar-med.ru'
+    },
+    {
+      title: 'Интернет-магазины плитки',
+      link: 'www.teploars.ru',
+      href: '#'
+    },
+    {
+      title: 'Интернет-магазины плитки',
+      link: 'www.voda33.su',
+      href: '#'
+    },
+    {
+      title: 'Интернет-магазины плитки',
+      link: 'www.skobar.ob-ob.ru',
+      href: '#'
+    },
+    {
+      title: 'Интернет-магазины плитки',
+      link: 'www.teploars.ru',
+      href: '#'
+    },
+  ];
+
+mixin development
+  .development&attributes(attributes)
+    section.development__section
+      h2.development__section-heading Разрабатываем
+      ul.development__list
+        li.development__list-item Крупные интернет-магазины
+        li.development__list-item Корпоративные имиджевые сайты
+        li.development__list-item Продающие Landing page и Promo
+        li.development__list-item Мобильные приложения
+        li.development__list-item Фирменные стили
+    section.development__section
+      h2.development__section-heading Кейсы 6/31
+      ul.development__cases
+        each devCase in devCases
+          li.development__cases-item
+            p.development__case-title= devCase.title
+            a.development__case-link(href= devCase.href target='_blank' rel='noopener')= devCase.link
+    +button({
+      tag: 'a',
+      text: 'Обсудить проект / <span class="hidden hidden--nm">рассчитать</span> стоимость',
+      href: '#',
+    })(class='development__button button--primary')
+    p.development__text Ответим в течении 60 минут!

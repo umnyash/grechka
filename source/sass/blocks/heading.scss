@@ -1,0 +1,41 @@
+.heading {
+  font: 700 24px/29px $main-font-family;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+.heading--size_l {
+  font-size: 30px;
+  line-height: 36px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .heading__small {
+    font-size: 22px;
+    line-height: 31px;
+    text-transform: none;
+
+    @media (min-width: $tablet-width) {
+      font-size: 24px;
+      line-height: 29px;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+}

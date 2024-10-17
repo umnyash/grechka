@@ -1,0 +1,55 @@
+.offer {
+  font: 400 16px/22px $main-font-family;
+
+  @media (min-width: $wide-desktop-width) {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.offer__heading {
+  margin: 0 0 24px;
+}
+
+.offer__text {
+  margin: 0;
+}
+
+.offer__buttons {
+  display: flex;
+  margin: 32px 0 0;
+  flex-direction: column;
+  gap: 8px 20px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.offer--big {
+  font-size: 18px;
+  line-height: 23px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  .offer__heading {
+    margin-bottom: 11px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .offer__text {
+    @media (min-width: $laptop-width) {
+      max-width: 500px;
+    }
+  }
+
+  .offer__buttons {
+    margin-top: 38px;
+  }
+}

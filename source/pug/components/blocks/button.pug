@@ -1,0 +1,3 @@
+mixin button({ tag, text, type, href, rel })
+  #{tag}.button(type= type href= href rel= rel)&attributes(attributes)
+    span.button__text!= text
