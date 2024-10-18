@@ -1,6 +1,40 @@
 "use strict";
 
 /* * * * * * * * * * * * * * * * * * * * * * * *
+ * util.js
+ */
+function getPaginationButtonCreator(slideName = 'Слайд') {
+  return (index, className) => `
+    <button class='${className}' type='button'>
+      <span class='visually-hidden'>${slideName} ${index + 1}.</span>
+    </button>
+  `;
+}
+/* * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * *
+ * banners.js
+ */
+function initBanners(bannersElement) {
+  const sliderElement = bannersElement.querySelector('.banners__slider');
+  new Swiper(sliderElement, {
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    loop: true,
+    pagination: {
+      el: '.banners__slider-pagination',
+      bulletClass: 'banners__slider-pagination-button',
+      bulletActiveClass: 'banners__slider-pagination-button--current',
+      renderBullet: getPaginationButtonCreator(),
+      clickable: true
+    }
+  });
+}
+/* * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * *
  * page-slider.js
  */
 function initPageSlider() {
@@ -12,7 +46,7 @@ function initPageSlider() {
     fadeEffect: {
       crossFade: true
     },
-    // autoHeight: true,
+    autoHeight: true,
     allowTouchMove: false
   });
   buttonElements.forEach(buttonElement => {
@@ -34,4 +68,5 @@ function initPageSlider() {
  * main.js
  */
 initPageSlider();
+initBanners(document.querySelector('.banners'));
 /* * * * * * * * * * * * * * * * * * * * * * * */
