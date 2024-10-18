@@ -8,6 +8,10 @@
   }
 }
 
+.heading__small {
+  display: block;
+}
+
 .heading--size_l {
   font-size: 30px;
   line-height: 36px;
@@ -23,6 +27,7 @@
   }
 
   .heading__small {
+    margin-top: 10px;
     font-size: 22px;
     line-height: 31px;
     text-transform: none;

@@ -1,0 +1,8 @@
+mixin banners({ banners })
+  .banners&attributes(attributes)
+    .banners__slider.swiper
+      ul.banners__list.swiper-wrapper
+        each banner in banners
+          li.banners__item.swiper-slide
+            +banner({ banner })
+      .banners__slider-pagination

@@ -2,25 +2,6 @@ mixin about
   .about&attributes(attributes)
     .about__inner
       .about__offer-wrapper
-        +offer({
-          offer: {
-            heading: '<span class="accent">Внедрим</span> Битрикс24 в&nbsp;ваш бизнес',
-            texts: [
-              'Проведем презентацию Битрикс24 под вашу нишу, обсудим бизнес-процессы, подготовим план работ и оценку внедрения',
-            ],
-            primaryButton: {
-              tag: 'a',
-              text: 'Рассчитать стоимость',
-              href: '#',
-            },
-            secondaryButton: {
-              tag: 'a',
-              text: 'Узнать больше',
-              href: '#',
-            }
-          },
-          headingTag: 'h1',
-          size: 'big'
-        })(class='about__offer offer--big')
+        +offer(descriptionOffer)(class='about__offer offer--big')
       .about__development-wrapper
         +development(class='about__development')

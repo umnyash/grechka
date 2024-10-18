@@ -12,7 +12,7 @@ function initPageSlider() {
     fadeEffect: {
       crossFade: true
     },
-    // autoHeight: true,
+    autoHeight: true,
     allowTouchMove: false
   })
 
