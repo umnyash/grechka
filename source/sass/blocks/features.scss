@@ -1,0 +1,44 @@
+.features {
+  font: 400 18px/25px $main-font-family;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 31px;
+  }
+}
+
+.features__inner {
+  @media (min-width: $tablet-width) {
+    padding-right: 66px;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    padding-right: 0;
+  }
+}
+
+.features__heading {
+  max-width: 600px;
+  margin: 0 0 12px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 800px;
+    margin-bottom: 24px;
+  }
+}
+
+.features__text {
+  margin: 0 0 32px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    margin-bottom: 60px;
+  }
+}

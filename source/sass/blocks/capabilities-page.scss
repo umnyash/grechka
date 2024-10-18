@@ -1,0 +1,15 @@
+.capabilities-page__banners {
+  margin: 0 0 60px;
+
+  @media (min-width: $wide-desktop-width) {
+    margin-bottom: 80px;
+  }
+}
+
+.capabilities-page__features {
+  margin: 0 0 90px;
+
+  @media (min-width: $wide-desktop-width) {
+    margin-bottom: 100px;
+  }
+}

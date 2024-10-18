@@ -1,4 +1,5 @@
 mixin capabilities-page
   .capabilities-page&attributes(attributes)
     h1.visually-hidden Возможности
-    +banners({ banners: capabilitiesBanners })
+    +banners({ banners: capabilitiesBanners })(class='capabilities-page__banners')
+    +features(class='capabilities-page__features')
