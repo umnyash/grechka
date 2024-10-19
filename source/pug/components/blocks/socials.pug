@@ -1,0 +1,9 @@
+mixin socials
+  .socials&attributes(attributes)
+    .socials__inner
+      p.socials__text Я в соцсетях, пишите ;)
+      ul.socials__list
+        li.socials__item
+          +social-link('instagram')
+        li.socials__item
+          +social-link('telegram')

@@ -4,6 +4,11 @@
   color: currentColor;
   transition: color $duration-s ease-in-out;
 
+  &:hover,
+  &:active {
+    color: var(--accent-color);
+  }
+
   &:active .social-link__icon {
     transform: scale(0.85);
   }

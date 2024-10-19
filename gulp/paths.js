@@ -54,6 +54,7 @@ export default {
 
   processScripts: {
     src: [
+      `${pathSrc}/js/const.js`,
       `${pathSrc}/js/util.js`,
       `${pathSrc}/js/modules/*.js`,
       `${pathSrc}/js/main.js`,
