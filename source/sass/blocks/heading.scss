@@ -27,12 +27,13 @@
   }
 
   .heading__small {
-    margin-top: 10px;
+    margin-top: 4px;
     font-size: 22px;
     line-height: 31px;
     text-transform: none;
 
     @media (min-width: $tablet-width) {
+      margin-top: 10px;
       font-size: 24px;
       line-height: 29px;
       text-transform: uppercase;

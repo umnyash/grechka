@@ -1,18 +1,23 @@
-mixin offer({ offer, headingTag, size })
-  - const {heading, texts, primaryButton, secondaryButton} = offer;
+mixin offer({ offer, headingTag = 'h3', size })
+  - const {heading, texts, list, primaryButton, secondaryButton} = offer;
 
   .offer&attributes(attributes)
     #{headingTag}.offer__heading.heading(class= (size === 'big') ? 'heading--size_l' : '')!= heading
     each text in texts
       p.offer__text!= text
-    .offer__buttons
-      if size === 'big'
-        if primaryButton
-          +button(primaryButton)(class='button--primary')
-        if secondaryButton
-          +button(secondaryButton)(class='button--secondary')
-      else
-        if secondaryButton
-          +button(secondaryButton)(class='button--secondary')
-        if primaryButton
-          +button(primaryButton)(class='button--primary')
+    if list
+      ul.offer__list
+        each item in list
+          li.offer__list-item= item
+    if primaryButton || secondaryButton
+      .offer__buttons
+        if size === 'big'
+          if primaryButton
+            +button(primaryButton)(class='button--primary')
+          if secondaryButton
+            +button(secondaryButton)(class='button--secondary')
+        else
+          if secondaryButton
+            +button(secondaryButton)(class='button--secondary')
+          if primaryButton
+            +button(primaryButton)(class='button--primary')

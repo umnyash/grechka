@@ -1,0 +1,15 @@
+mixin capabilities-list({ capabilities })
+  .capabilities-list&attributes(attributes)
+    .container
+      ul.capabilities-list__items
+        each item in capabilities
+          li.capabilities-list__item
+            .capabilities-list__offer-wrapper
+              +offer({ offer: item })
+            picture.capabilities-list__image-wrapper
+              img.capabilities-list__image(
+                src= item.image.src
+                width= item.image.width
+                height= item.image.height
+                alt=''
+              )
