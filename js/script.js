@@ -1,6 +1,12 @@
 "use strict";
 
 /* * * * * * * * * * * * * * * * * * * * * * * *
+ * const.js
+ */
+const TABLET_WIDTH_MEDIA_QUERY = '(min-width: 768px)';
+/* * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * *
  * util.js
  */
 function getPaginationButtonCreator(slideName = 'Слайд') {
@@ -65,8 +71,30 @@ function initPageSlider() {
 /* * * * * * * * * * * * * * * * * * * * * * * */
 
 /* * * * * * * * * * * * * * * * * * * * * * * *
+ * socials.js
+ */
+function initSocials(socialsElement) {
+  const pageInnerElement = document.querySelector('.page__inner');
+  const pageContentElement = pageInnerElement.querySelector('.page__content');
+  const moveSocialsElement = () => {
+    if (tabletWidthMediaQueryList.matches) {
+      pageContentElement.append(socialsElement);
+    } else {
+      pageInnerElement.append(socialsElement);
+    }
+  };
+  moveSocialsElement();
+  tabletWidthMediaQueryList.addEventListener('change', () => {
+    moveSocialsElement();
+  });
+}
+/* * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * *
  * main.js
  */
+const tabletWidthMediaQueryList = window.matchMedia(TABLET_WIDTH_MEDIA_QUERY);
 initPageSlider();
 initBanners(document.querySelector('.banners'));
+initSocials(document.querySelector('.socials'));
 /* * * * * * * * * * * * * * * * * * * * * * * */
