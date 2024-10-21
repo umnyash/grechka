@@ -19,6 +19,26 @@ function getPaginationButtonCreator(slideName = 'Слайд') {
 /* * * * * * * * * * * * * * * * * * * * * * * */
 
 /* * * * * * * * * * * * * * * * * * * * * * * *
+ * anchors.js
+ */
+function initAnchors() {
+  const scrollWrapperElement = document.querySelector('.page__inner');
+  const anchorElements = document.querySelectorAll('.pricing__anchor');
+  anchorElements.forEach(anchorElement => {
+    anchorElement.addEventListener('click', evt => {
+      evt.preventDefault();
+      const targetElement = document.querySelector(anchorElement.getAttribute('href'));
+      const targetElementPosition = targetElement.getBoundingClientRect().top;
+      scrollWrapperElement.scrollTo({
+        top: scrollWrapperElement.scrollTop + targetElementPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+}
+/* * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * *
  * banners.js
  */
 function initBanners(bannersElement) {
@@ -137,6 +157,7 @@ function initPageSlider() {
   const PAGES = ['about', 'capabilities', 'prices'];
   const sliderElement = document.querySelector('.page-slider');
   const buttonElements = document.querySelectorAll('.logo, .site-navigation__link');
+  let currentButtonElement = null;
   const slider = new Swiper(sliderElement, {
     effect: 'fade',
     fadeEffect: {
@@ -147,15 +168,18 @@ function initPageSlider() {
   });
   buttonElements.forEach(buttonElement => {
     buttonElement.addEventListener('click', evt => {
+      evt.preventDefault();
+      if (currentButtonElement?.classList.contains('site-navigation__link')) {
+        currentButtonElement?.classList.remove('site-navigation__link--active');
+      }
       const pageName = evt.currentTarget.getAttribute('href').slice(1);
       const pageIndex = PAGES.indexOf(pageName);
       slider.slideTo(pageIndex);
+      if (evt.currentTarget.classList.contains('site-navigation__link')) {
+        evt.currentTarget.classList.add('site-navigation__link--active');
+      }
+      currentButtonElement = evt.currentTarget;
     });
-  });
-  document.addEventListener('DOMContentLoaded', () => {
-    const pageName = window.location.hash.slice(1);
-    const pageIndex = Math.max(PAGES.indexOf(pageName), 0);
-    slider.slideTo(pageIndex, 0, false);
   });
 }
 /* * * * * * * * * * * * * * * * * * * * * * * */
@@ -283,4 +307,5 @@ initSocials(document.querySelector('.socials'));
 initTariffs();
 initLicenses();
 document.querySelectorAll('.dropdown').forEach(initDropdown);
+initAnchors();
 /* * * * * * * * * * * * * * * * * * * * * * * */
