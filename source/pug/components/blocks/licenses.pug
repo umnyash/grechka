@@ -1,0 +1,7 @@
+mixin licenses({ licenses })
+  .licenses&attributes(attributes)
+    .licenses__slider.swiper
+      ul.licenses__list.swiper-wrapper
+        each license in licenses
+          li.licenses__item.swiper-slide
+            +license-card({ license })

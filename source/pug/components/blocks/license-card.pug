@@ -1,0 +1,50 @@
+mixin license-card({ license })
+  -
+    const {
+      title,
+      users,
+      prices,
+      featuresCount
+    } = license;
+
+  article.license-card&attributes(attributes)
+    header.license-card__header
+      h3.license-card__heading= title
+    .license-card__body
+      .license-card__users-wrapper
+        case title
+          when 'Корпоративный портал'
+            ul.license-card__users-list
+              each value, index in users
+                li.license-card__users-item
+                  button.license-card__users-button(
+                    class= index === 0 && 'license-card__users-button--active'
+                    type='button'
+                    data-price= prices[index][0]
+                    data-old-price= prices[index][1]
+                  )= value
+          when 'Энтерпрайз'
+            span.license-card__users-value= `${users} +`
+          default
+            span.license-card__users-value= users
+        span.license-card__users-text пользователей
+      .license-card__price-wrapper
+        case title
+          when 'Корпоративный портал'
+            .license-card__price-with-discount
+              s.license-card__price.license-card__price--old(data-old-price)= `${prices[0][1].toLocaleString()} ₽`
+              p.license-card__price(data-price)= `${prices[0][0].toLocaleString()} ₽`
+              p.license-card__discount -15%
+          when 'Энтерпрайз'
+            p.license-card__price= `${prices[0].toLocaleString()} + ₽`
+          default
+            .license-card__price-with-discount
+              s.license-card__price.license-card__price--old= `${prices[1].toLocaleString()} ₽`
+              p.license-card__price= `${prices[0].toLocaleString()} ₽`
+              p.license-card__discount -15%
+      p.license-card__duration Лицензия 12 мес
+      +button(buyButton)(class='license-card__button button--primary')
+      ul.license-card__features
+        each feature, index in licensesFeatures
+          li.license-card__feature(class= index < featuresCount && 'license-card__feature--active')= feature
+            span.visually-hidden= index < featuresCount ? 'Выбрано' : 'Не выбрано'

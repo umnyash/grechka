@@ -2,6 +2,7 @@
   --text-color: #454965;
   --text-additional-color: #7479a6;
   --text-light-color: #ffffff;
+  --text-weak-color: #7e8e92;
   --text-light-additional-color: #c3c4ce;
   --text-light-additional-color-2: #bcbecd;
   --text-light-additional-color-3: #eaeaea;
@@ -12,9 +13,24 @@
   --background-dark-color: #454965;
   --background-additional-color: #ebf6f2;
   --background-additional-color-2: #faf9f9;
+  --background-additional-color-3: #eaf6f2;
   --border-light-color: #696d88;
   --accent-color: #47cc54;
   --accent-color-o44: rgba(71, 204, 84, 0.44);
+  --special-color: #f7e073;
+  --special-color-2: #2fc7f8;
+  --special-color-2-o4: rgba(47, 199, 248, 0.4);
+  --special-color-3: #30beec;
+
+  // Для тарифов
+  --background-special-color-1: #f0fcf1;
+  --background-special-color-2: #d2f6d5;
+  --background-special-color-3: #e8f9ff;
+  --background-special-color-4: #ccf0fc;
+  --background-special-color-5: #e3ffff;
+  --background-special-color-6: #c1f6f5;
+  --border-special-color-1: #ddeade;
+  --border-special-color-2: #edf4ee;
 
   --edge-indent: 16px;
 

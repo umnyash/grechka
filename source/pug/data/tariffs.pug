@@ -1,0 +1,142 @@
+-
+  const tariffsFeatures = [
+    {
+      title: 'Совместная работа',
+      list: ['Календарь', 'Соцсеть компании', 'Новости', 'База знаний']
+    },
+    {
+      title: 'Мессенджер',
+      list: ['Чат', 'Каналы', 'Битрикс24 Синк']
+    },
+    {
+      title: 'Задачи и проекты'
+    },
+    {
+      title: 'CRM'
+    },
+    {
+      title: 'CoPilot'
+    },
+    {
+      title: 'Онлайн-подпись'
+    },
+    {
+      title: 'Диск'
+    },
+    {
+      title: 'Контакт-центр'
+    },
+    {
+      title: 'Сайты'
+    },
+    {
+      title: 'Интернет-магазин'
+    },
+    {
+      title: 'Маркетинг'
+    },
+    {
+      title: 'Документы Онлайн'
+    },
+    {
+      title: 'КЭДО+Госключ'
+    },
+    {
+      title: 'Сквозная аналитика'
+    },
+    {
+      title: 'Автоматизация'
+    },
+    {
+      title: 'HR: Компания'
+    },
+    {
+      title: 'Филиалы'
+    },
+    {
+      title: 'Энтерпрайз-кластер'
+    },
+    {
+      title: 'Энтерпрайз-пакет'
+    },
+    {
+      title: 'Поддержка'
+    },
+    {
+      title: 'Администрирование'
+    },
+  ];
+
+  const tariffs = [
+    {
+      title: 'Бесплатный',
+      description: 'Начните работать онлайн и продавать больше с CRM',
+      users: 'неограниченно',
+      prices: 0,
+      capacity: '5 ГБ',
+      mainFeatures: tariffsFeatures.slice(0, 9),
+      mainFeaturesLevels: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+      button: feedbackButton
+    },
+    {
+      title: 'Базовый',
+      description: 'CRM для небольших отделов продаж',
+      users: 5,
+      prices: [2490, 1619],
+      capacity: '24 ГБ',
+      mainFeatures: tariffsFeatures.slice(0, 10),
+      mainFeaturesLevels: [2, 2, 1, 2, 3, 2, 1, 2, 2, 2],
+      additionalFeatures: tariffsFeatures.slice(-2, -1),
+      additionalFeaturesLevels: [1],
+      button: buyButton
+    },
+    {
+      title: 'Стандартный',
+      description: 'Для совместной работы компании или рабочих групп',
+      users: 50,
+      prices: [6990, 4544],
+      capacity: '100 ГБ',
+      mainFeatures: tariffsFeatures.slice(0, 12),
+      mainFeaturesLevels: [2, 3, 2, 2, 3, 2, 1, 2, 2, 2, 2, 2],
+      additionalFeatures: tariffsFeatures.slice(-2),
+      additionalFeaturesLevels: [2, 2],
+      button: buyButton
+    },
+    {
+      title: 'Профессиональный',
+      description: 'Для максимальной автоматизации всех процессов в компании',
+      users: 100,
+      prices: [13990, 9094],
+      capacity: '1024 ГБ',
+      mainFeatures: tariffsFeatures.slice(0, 16),
+      mainFeaturesLevels: [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 3],
+      additionalFeatures: tariffsFeatures.slice(-2),
+      additionalFeaturesLevels: [2, 2],
+      button: buyButton
+    },
+    {
+      title: 'Энтерпрайз',
+      description: 'Объединяет все необходимые инструменты для современного бизнеса',
+      users: [250, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],
+      prices: [
+        [33990, 22094],
+        [59990, 38994],
+        [99990, 64994],
+        [199990, 129994],
+        [299990, 194994],
+        [399990, 259994],
+        [499990, 324994],
+        [599990, 389994],
+        [699990, 454994],
+        [799990, 519994],
+        [899990, 584994],
+        [999990, 649994],
+      ],
+      capacity: '3 ТБ',
+      mainFeatures: tariffsFeatures.slice(0, 19),
+      mainFeaturesLevels: new Array(19).fill(3),
+      additionalFeatures: tariffsFeatures.slice(-2),
+      additionalFeaturesLevels: [3, 3],
+      button: buyButton
+    },
+  ];

@@ -1,0 +1,310 @@
+.tariff-card {
+  padding: 8px 0;
+  box-sizing: border-box;
+  border-radius: 24px;
+  font: 400 16px/22px $main-font-family;
+}
+
+.tariff-card__inner {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.tariff-card__header {
+  display: grid;
+  box-sizing: border-box;
+  min-height: 144px;
+  padding: 26px 12px 22px;
+  border-bottom: 1px solid var(--border-special-color-1);
+  border-radius: 20px 20px 0 0;
+  row-gap: 7px;
+  align-content: start;
+  text-align: center;
+  background: var(--background-special-color-4);
+
+  @media (min-width: $tablet-width) {
+    min-height: 150px;
+  }
+}
+
+.tariff-card__heading {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+.tariff-card__description {
+  padding: 0 8px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.6;
+}
+
+.tariff-card__body {
+  display: grid;
+  padding: 13px 7px 23px;
+  border: 1px solid var(--border-special-color-2);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  grid-template-rows: repeat(5, auto) 1fr;
+  grid-template-areas:
+    "users"
+    "prices"
+    "button"
+    "capacity"
+    "main-features"
+    "additional-features";
+  align-content: start;
+  justify-items: center;
+  background: var(--background-special-color-3);
+
+  @media (min-width: $tablet-width) {
+    padding-top: 17px;
+  }
+}
+
+.tariff-card__users-wrapper {
+  grid-area: users;
+  display: grid;
+  width: 100%;
+  min-height: 64px;
+  margin: 0 0 24px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    min-height: 70px;
+    margin-bottom: 0;
+    align-items: start;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    margin-bottom: 24px;
+    align-items: center;
+  }
+}
+
+.tariff-card__users {
+  padding: 8px 16px 6px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.tariff-card__prices {
+  grid-area: prices;
+  margin: 0 0 24px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    align-items: end;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    align-items: center;
+  }
+}
+
+.tariff-card__price {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+.tariff-card__price--old {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  text-decoration: line-through;
+  color: var(--text-weak-color);
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.tariff-card__discount {
+  padding: 5px 8px 3px;
+  margin: 0;
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 800;
+  background: var(--special-color);
+}
+
+.tariff-card__year-price {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-flow: dense;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 8px;
+  }
+
+  .tariff-card__price--old {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+}
+
+.tariff-card__button {
+  grid-area: button;
+  margin: 0 0 24px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.tariff-card__capacity {
+  grid-area: capacity;
+  margin: 0 0 32px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+
+  @media (min-width: $wide-desktop-width) {
+    margin-bottom: 24px;
+  }
+}
+
+.tariff-card__main-features {
+  grid-area: main-features;
+  justify-self: start;
+  margin: 0 0 70px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 38px;
+  }
+}
+
+.tariff-card__additional-features {
+  grid-area: additional-features;
+  justify-self: start;
+  align-self: end;
+  min-height: 64px;
+}
+
+.tariff-card__features {
+  display: grid;
+  padding: 0 0 0 36px;
+  margin: 0;
+  list-style: none;
+  row-gap: 20px;
+}
+
+.tariff-card__feature {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 9px 8px;
+  align-items: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.tariff-card__feature-icon {
+  --feature-indicator-border-color: rgb(121, 190, 212);
+  --feature-indicator-part-1-color: rgba(39, 145, 179, 0.8);
+  --feature-indicator-part-2-color: rgba(39, 145, 179, 0.8);
+  --feature-indicator-part-3-color: rgba(39, 145, 179, 0.8);
+}
+
+.tariff-card__feature-list {
+  grid-column: 1 / -1;
+  display: grid;
+  padding: 0;
+  margin: 0 0 0 8px;
+  list-style: none;
+  row-gap: 8px;
+  opacity: 0.6;
+}
+
+.tariff-card--selected {
+  padding: 6px;
+  border: 2px solid var(--special-color-2);
+}
+
+.tariff-card--free {
+  .tariff-card__header {
+    background: var(--background-special-color-2);
+  }
+
+  .tariff-card__body {
+    background: var(--background-special-color-1);
+  }
+
+  .tariff-card__feature-icon {
+    --feature-indicator-border-color: rgba(89, 209, 101, 0.5);
+    --feature-indicator-part-1-color: rgba(71, 204, 84, 0.9);
+    --feature-indicator-part-2-color: rgba(71, 204, 84, 0.9);
+    --feature-indicator-part-3-color: rgba(71, 204, 84, 0.9);
+  }
+}
+
+.tariff-card--enterprise {
+  .tariff-card__header {
+    background: var(--background-special-color-6);
+  }
+
+  .tariff-card__body {
+    background: var(--background-special-color-5);
+  }
+}
+
+.tariff-card__feature--level_1 .tariff-card__feature-icon {
+  --feature-indicator-part-2-color: transparent;
+  --feature-indicator-part-3-color: transparent;
+}
+
+.tariff-card__feature--level_2 .tariff-card__feature-icon {
+  --feature-indicator-part-3-color: transparent;
+}
+
+
+.tariff-card--payment-type_month {
+  .tariff-card__year-price {
+    display: none;
+  }
+}
+
+.tariff-card--payment-type_year {
+  .tariff-card__prices {
+    min-height: 54px;
+
+    @media (min-width: $tablet-width) {
+      min-height: 64px;
+    }
+  }
+
+  .tariff-card__month-price {
+    display: none;
+  }
+}

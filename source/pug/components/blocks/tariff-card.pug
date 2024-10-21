@@ -1,0 +1,80 @@
+mixin tariff-card({ tariff })
+  -
+    const {
+      title,
+      description,
+      users,
+      prices,
+      capacity,
+      mainFeatures,
+      mainFeaturesLevels,
+      additionalFeatures,
+      additionalFeaturesLevels,
+      button
+    } = tariff;
+
+    let tariffClass = '';
+
+    switch (title) {
+      case 'Бесплатный':
+        tariffClass = 'tariff-card--free';
+        break;
+      case 'Энтерпрайз':
+        tariffClass = 'tariff-card--enterprise';
+        break;
+    }
+
+    const selectedClass = title === 'Профессиональный' ? 'tariff-card--selected' : '';
+    const  className = `${tariffClass} ${selectedClass}`.trim();
+
+  article.tariff-card(class= className && className)&attributes(attributes)
+    .tariff-card__inner
+      header.tariff-card__header
+        h3.tariff-card__heading= title
+        p.tariff-card__description= description
+      .tariff-card__body
+        .tariff-card__users-wrapper
+          if Array.isArray(users)
+            -
+              const buttons = users.map((item, index) => ({
+                text: `${item.toLocaleString()} пользователей`,
+                monthPrice: prices[index][0],
+                yearPrice: prices[index][1]
+              }));
+
+            +dropdown({ buttons })
+          else
+            p.tariff-card__users= `${users} пользователей`
+        .tariff-card__prices
+          if prices === 0
+            p.tariff-card__price бесплатно
+          else
+            -
+              const monthPrice = Array.isArray(users) ? prices[0][0] : prices[0];
+              const yearPrice = Array.isArray(users) ? prices[0][1] : prices[1];
+
+            .tariff-card__month-price
+              p.tariff-card__price(data-month-price)= `${monthPrice.toLocaleString()} ₽/мес.`
+            .tariff-card__year-price
+              s.tariff-card__price.tariff-card__price--old(data-month-price)= `${monthPrice.toLocaleString()} ₽/мес.`
+              p.tariff-card__price(data-year-price)= `${yearPrice.toLocaleString()} ₽/мес.`
+              p.tariff-card__discount -35%
+        +button(button)(class=`tariff-card__button button--${title === 'Бесплатный' ? 'secondary' : 'primary'}`)
+        p.tariff-card__capacity= capacity
+        .tariff-card__main-features
+          ul.tariff-card__features
+            each feature, index in mainFeatures
+              li.tariff-card__feature(class=`tariff-card__feature--level_${mainFeaturesLevels[index]}`)= feature.title
+                svg.tariff-card__feature-icon(width='28' height='12' role='img' aria-label=`Уровень ${mainFeaturesLevels[index]} из 3`)
+                  use(href='img/feature-level-indicator.svg#icon')
+                if feature.list
+                  ul.tariff-card__feature-list
+                    each item in feature.list
+                      li.tariff-card__feature-item= item
+        if additionalFeatures
+          .tariff-card__additional-features
+            ul.tariff-card__features
+              each feature, index in additionalFeatures
+                li.tariff-card__feature(class=`tariff-card__feature--level_${additionalFeaturesLevels[index]}`)= feature.title
+                  svg.tariff-card__feature-icon(width='28' height='12' role='img' aria-label=`Уровень ${additionalFeaturesLevels[index]} из 3`)
+                    use(href='img/feature-level-indicator.svg#icon')

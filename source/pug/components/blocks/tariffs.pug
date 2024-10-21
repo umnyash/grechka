@@ -1,0 +1,13 @@
+mixin tariffs({ tariffs })
+  .tariffs&attributes(attributes)
+    .tariffs__slider.swiper
+      ul.tariffs__list.swiper-wrapper
+        each tariff in tariffs
+          li.tariffs__item.swiper-slide
+            +tariff-card({ tariff })(class='tariff-card--payment-type_year')
+    button.tariffs__button.tariffs__button--left(type='button')
+      span.tariffs__button-badge Тариф
+      | Бесплатный
+    button.tariffs__button.tariffs__button--right(type='button')
+      span.tariffs__button-badge Тариф
+      | Энтерпрайз

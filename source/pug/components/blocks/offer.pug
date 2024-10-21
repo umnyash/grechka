@@ -2,7 +2,7 @@ mixin offer({ offer, headingTag = 'h3', size })
   - const {heading, texts, list, primaryButton, secondaryButton} = offer;
 
   .offer&attributes(attributes)
-    #{headingTag}.offer__heading.heading(class= (size === 'big') ? 'heading--size_l' : '')!= heading
+    #{headingTag}.offer__heading.heading(class= (size === 'big') ? 'heading--size_xl' : '')!= heading
     each text in texts
       p.offer__text!= text
     if list

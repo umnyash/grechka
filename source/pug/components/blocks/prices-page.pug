@@ -1,4 +1,6 @@
 mixin prices-page
   .prices-page&attributes(attributes)
     h1.visually-hidden Цены
-    +banner({ banner: discountBanner })
+    +banner({ banner: discountBanner })(class='prices-page__banner')
+    +cloud-pricing(class='prices-page__cloud-pricing')
+    +box-pricing

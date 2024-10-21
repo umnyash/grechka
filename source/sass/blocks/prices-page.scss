@@ -1,0 +1,23 @@
+.prices-page {
+  padding: 0 0 90px;
+
+  @media (min-width: $wide-desktop-width) {
+    padding-bottom: 100px;
+  }
+}
+
+.prices-page__banner {
+  margin: 0 0 63px;
+
+  @media (min-width: $wide-desktop-width) {
+    margin-bottom: 80px;
+  }
+}
+
+.prices-page__cloud-pricing {
+  margin: 0 0 90px;
+
+  @media (min-width: $wide-desktop-width) {
+    margin-bottom: 100px;
+  }
+}

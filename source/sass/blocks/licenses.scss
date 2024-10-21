@@ -1,0 +1,28 @@
+.licenses__slider {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0 var(--edge-indent);
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
+}
+
+.licenses__list.licenses__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: stretch;
+}
+
+.licenses__item {
+  display: grid;
+  width: 273px;
+  height: auto;
+  /* stylelint-disable-next-line declaration-no-important */
+  pointer-events: auto !important;
+
+  @media (min-width: $desktop-width) {
+    width: auto;
+  }
+}

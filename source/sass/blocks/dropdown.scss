@@ -1,0 +1,98 @@
+.dropdown {
+  position: relative;
+  font: 700 20px/28px $main-font-family;
+  color: var(--text-color);
+}
+
+.dropdown__toggle-button {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 5px 6px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  transition-property: background-color, border-color;
+  transition-duration: $duration-s;
+  transition-timing-function: ease-in-out;
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 8px;
+    background: url("../img/icons.svg#controls_arrow-without-tail");
+    transition: transform $duration-s ease-in-out;
+  }
+}
+
+.dropdown__toggle-button-text {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dropdown__list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  padding: 4px 0;
+  border: 1px solid var(--border-special-color-1);
+  border-radius: 12px;
+  margin: 4px 0 0;
+  list-style: none;
+  background: var(--background-color);
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: $duration-s;
+  transition-timing-function: ease-in-out;
+}
+
+.dropdown__item-button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 16px 4px 29px;
+  border: none;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  transition-property: color, background-color;
+  transition-duration: $duration-xs;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    color: var(--text-light-color);
+    background-color: var(--background-dark-color);
+  }
+}
+
+.dropdown--open {
+  .dropdown__list {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown__toggle-button {
+    &::after {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.dropdown__toggle-button:hover,
+.dropdown--open .dropdown__toggle-button {
+  background-color: var(--background-color);
+  border-color: currentColor;
+}

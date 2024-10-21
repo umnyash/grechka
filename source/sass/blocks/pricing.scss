@@ -1,0 +1,327 @@
+.pricing {
+  font: 400 16px/22px $main-font-family;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    font-size: 22px;
+    line-height: 31px;
+  }
+}
+
+.pricing__inner {
+  display: grid;
+  grid-template-columns: var(--edge-indent) 1fr var(--edge-indent);
+  grid-template-areas:
+    ".     description ."
+    ".     anchor      ."
+    ".     toggle      ."
+    "cards cards       cards";
+
+  @media (min-width: $desktop-width) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $centerer-max-width;
+    padding: 0 180px 0 120px;
+    margin: 0 auto;
+    grid-template-columns: minmax(660px, 740px) 32px minmax(380px, 610px);
+    grid-template-areas:
+      "description line  anchor"
+      "toggle      line  anchor"
+      "cards       cards cards";
+    column-gap: 32px;
+
+    &::before {
+      content: "";
+      grid-area: line;
+      justify-self: end;
+      width: 2px;
+      height: 100%;
+      background: var(--border-special-color-1);
+    }
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    padding-right: 120px;
+    grid-template-columns: 736px 17px 1fr;
+  }
+}
+
+.pricing__description {
+  grid-area: description;
+  display: grid;
+
+  @media (min-width: $tablet-width) {
+    padding-right: 66px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-right: 0;
+  }
+}
+
+.pricing__heading {
+  margin: 0 0 11px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 24px;
+  }
+}
+
+.pricing__text {
+  margin: 0;
+}
+
+.pricing__text + .pricing__text {
+  margin-top: 22px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 22px;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    margin-top: 31px;
+  }
+}
+
+.pricing__toggle {
+  grid-area: toggle;
+  display: grid;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid currentColor;
+  border-radius: 1000px;
+  margin: 32px 0 0;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  color: var(--text-color);
+
+  @media (min-width: $tablet-width) {
+    justify-self: start;
+    min-width: 206px;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    margin-top: 40px;
+  }
+}
+
+.pricing__toggle-button {
+  position: relative;
+  padding: 12px 14px 10px;
+  border: none;
+  border-radius: 1000px;
+  align-items: center;
+  text-align: center;
+  font: 400 14px/17px $main-font-family;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  transition: color $duration-xs ease-in;
+
+  @media (min-width: $wide-desktop-width) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 1000px;
+    outline: 1px solid transparent;
+    outline-offset: -5px;
+    transition-property: outline-color, outline-offset;
+    transition-duration: $duration-s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      outline-color: var(--text-additional-color);
+      outline-offset: 0;
+    }
+  }
+
+  &:active {
+    color: var(--accent-color);
+
+    &::before {
+      outline-color: var(--text-additional-color);
+      outline-offset: 0;
+    }
+  }
+
+  &--active {
+    background: var(--background-dark-color);
+    color: var(--text-light-color);
+    cursor: default;
+    pointer-events: none;
+
+    &::before {
+      outline-color: var(--text-additional-color);
+      outline-offset: 0;
+    }
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.pricing__anchor {
+  grid-area: anchor;
+  justify-self: start;
+  display: grid;
+  margin: 34px 0 0;
+  row-gap: 14px;
+  text-decoration: none;
+  color: var(--text-additional-color);
+
+  @media (min-width: $tablet-width) {
+    margin: 40px 66px 8px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-self: start;
+    justify-self: end;
+    margin: 0;
+  }
+}
+
+.pricing__anchor-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  place-items: center;
+  background: var(--background-additional-color-3);
+  transition: background-color $duration-s ease-in-out;
+
+  @media (min-width: $desktop-width) {
+    justify-self: end;
+  }
+
+  @media (min-width: $wide-desktop-width) {
+    justify-self: end;
+    width: 60px;
+    height: 60px;
+  }
+
+  &::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: var(--accent-color);
+    mask: url("../img/icons.svg#controls_arrow");
+    transition: background-color $duration-s ease-in-out, transform $duration-xs ease-in;
+  }
+}
+
+.pricing__anchor:hover {
+  .pricing__anchor-icon {
+    background-color: var(--accent-color);
+  }
+
+  .pricing__anchor-icon::before {
+    background-color: var(--text-light-color);
+  }
+}
+
+.pricing__anchor:active {
+  .pricing__anchor-icon {
+    background-color: var(--accent-color);
+  }
+
+  .pricing__anchor-icon::before {
+    background-color: var(--text-light-color);
+    transform: translateY(2px);
+  }
+}
+
+.pricing__anchor--top {
+  .pricing__anchor-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.pricing__tariffs {
+  grid-area: cards;
+  margin: 16px 0 0;
+  max-width: 1430px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 40px;
+    margin-right: 66px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+  }
+}
+
+.pricing__licenses {
+  grid-area: cards;
+  margin: 43px 0 0;
+  max-width: 1430px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 40px;
+    margin-right: 66px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+  }
+}
+
+.pricing--box {
+  .pricing__inner {
+    @media (min-width: $tablet-width) {
+      grid-template-areas:
+        ".     description ."
+        "cards cards       cards"
+        ".     anchor      .";
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-template-areas:
+        "description line  anchor"
+        "toggle      line  anchor"
+        "cards       cards cards";
+    }
+  }
+
+  .pricing__anchor {
+    @media (min-width: $tablet-width) {
+      margin-top: 90px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin: 0;
+    }
+  }
+}

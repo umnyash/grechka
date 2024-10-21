@@ -1,0 +1,13 @@
+mixin cloud-pricing
+  section.pricing.pricing--cloud&attributes(attributes)
+    .pricing__inner
+      .pricing__description
+        .pricing__heading.heading.heading--size_l.accent Облачный сервис
+        p.pricing__text Облачные технологии очень популярны на данный момент, они предоставляют гибкое управление всей структурой проекта и доступ к нему из любой точки мира, где есть интернет. Если вам нужны какие-то специфические настройки под свои нужды, брендирование портала и входящих в него продуктов, интеграция с другим программным обеспечением, то вы всегда можете осуществить переход на коробочное решение.
+        p.pricing__text Благодаря Битрикс24, командный дух остается сильным, даже если вы работаете на расстоянии.
+      .pricing__toggle
+        button.pricing__toggle-button(type='button' data-type='month') За месяц
+        button.pricing__toggle-button.pricing__toggle-button--active(type='button' data-type='year') За год
+      a.pricing__anchor.pricing__anchor--down.heading.heading--size_l(href='#box-pricing') Коробочная версия
+        .pricing__anchor-icon
+      +tariffs({ tariffs })(class='pricing__tariffs')

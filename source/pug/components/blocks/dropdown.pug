@@ -1,0 +1,14 @@
+mixin dropdown({ buttons })
+  .dropdown&attributes(attributes)
+    button.dropdown__toggle-button(type='button')
+      span.dropdown__toggle-button-text= buttons[0].text
+    ul.dropdown__list
+      each button in buttons
+        - const { text, monthPrice, yearPrice } = button;
+
+        li.dropdown__item
+          button.dropdown__item-button(
+            type='button'
+            data-month-price= monthPrice
+            data-year-price= yearPrice
+          )= text
