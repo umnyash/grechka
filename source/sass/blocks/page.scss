@@ -16,12 +16,12 @@
   z-index: 0;
   display: flex;
   box-sizing: border-box;
-  // height: 100vh;
+  height: 100vh;
   flex-direction: column;
   overflow-y: auto;
 
   @supports (height: 100dvh) {
-    // height: 100dvh;
+    height: 100dvh;
   }
 }
 

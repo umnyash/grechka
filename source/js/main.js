@@ -9,4 +9,5 @@ initSocials(document.querySelector('.socials'));
 initTariffs();
 initLicenses();
 document.querySelectorAll('.dropdown').forEach(initDropdown);
+initAnchors();
 /* * * * * * * * * * * * * * * * * * * * * * * */
