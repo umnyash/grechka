@@ -4,5 +4,5 @@ mixin banner({ banner })
       .banner__inner
         .banner__offer-wrapper
           +offer(banner.offer)(class='banner__offer offer--big')
-        picture.banner__image-wrapper
-          img.banner__image.blend-mode-darken(src= banner.image width='716' height='716' alt='')
+        picture.banner__image-wrapper.skeleton
+          img.banner__image.blend-mode-darken(src= banner.image width='716' height='716' alt='' loading='lazy')

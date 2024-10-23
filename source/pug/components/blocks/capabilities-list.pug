@@ -6,10 +6,11 @@ mixin capabilities-list({ capabilities })
           li.capabilities-list__item
             .capabilities-list__offer-wrapper
               +offer({ offer: item })
-            picture.capabilities-list__image-wrapper
+            picture.capabilities-list__image-wrapper.skeleton.skeleton--iridescent
               img.capabilities-list__image(
                 src= item.image.src
                 width= item.image.width
                 height= item.image.height
                 alt=''
+                loading='lazy'
               )

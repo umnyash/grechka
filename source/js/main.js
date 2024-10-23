@@ -5,6 +5,7 @@ const tabletWidthMediaQueryList = window.matchMedia(TABLET_WIDTH_MEDIA_QUERY);
 const inputEvent = new Event('input', { bubbles: true });
 
 initPageSlider();
+initSkeletons();
 initBanners(document.querySelector('.banners'));
 initSocials(document.querySelector('.socials'));
 initTariffs();
