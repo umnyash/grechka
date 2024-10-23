@@ -3,3 +3,7 @@
   margin: 0;
   list-style: none;
 }
+
+.page-slider__item.swiper-slide-active {
+  z-index: 2;
+}
