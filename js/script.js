@@ -414,12 +414,21 @@ function initBanners(bannersElement) {
       crossFade: true
     },
     loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false
+    },
     pagination: {
       el: '.banners__slider-pagination',
       bulletClass: 'banners__slider-pagination-button',
       bulletActiveClass: 'banners__slider-pagination-button--current',
       renderBullet: getPaginationButtonCreator(),
       clickable: true
+    },
+    on: {
+      autoplayTimeLeft: (_s, _time, progress) => {
+        sliderElement.style.setProperty('--slider-progress', 1 - progress);
+      }
     }
   });
 }
@@ -632,6 +641,31 @@ function showAlert({
   requestAnimationFrame(() => alert.open());
   return alert;
 }
+function initSkeleton(skeletonElement) {
+  const imgElement = skeletonElement.querySelector('img');
+  if (imgElement) {
+    if (imgElement.complete) {
+      skeletonElement.classList.add('skeleton--loaded');
+    } else {
+      imgElement.addEventListener('load', () => skeletonElement.classList.add('skeleton--loaded'), {
+        once: true
+      });
+    }
+  } else {
+    const videoElement = skeletonElement.querySelector('video');
+    if (videoElement.readyState >= 1) {
+      skeletonElement.classList.add('skeleton--loaded');
+    } else {
+      videoElement.addEventListener('loadeddata', () => skeletonElement.classList.add('skeleton--loaded'), {
+        once: true
+      });
+    }
+  }
+}
+function initSkeletons(wrapperElement = document) {
+  const skeletonElements = wrapperElement.querySelectorAll('.skeleton');
+  skeletonElements.forEach(initSkeleton);
+}
 
 /* * * * * * * * * * * * * * * * * * * * * * * *
  * socials.js
@@ -754,6 +788,7 @@ const inputEvent = new Event('input', {
   bubbles: true
 });
 initPageSlider();
+initSkeletons();
 initBanners(document.querySelector('.banners'));
 initSocials(document.querySelector('.socials'));
 initTariffs();
