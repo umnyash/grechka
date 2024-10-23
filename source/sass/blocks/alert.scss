@@ -1,0 +1,28 @@
+.alert {
+  color: var(--text-color);
+}
+
+.alert__heading {
+  margin: 0 36px 16px 0;
+
+  @media (min-width: $tablet-width) {
+    margin-right: 44px;
+  }
+}
+
+.alert__text {
+  margin: 0 0 16px;
+}
+
+.alert__button {
+  width: 100%;
+  margin: 16px 0 0;
+
+  @media (min-width: $wide-tablet-width) {
+    width: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 20px;
+  }
+}

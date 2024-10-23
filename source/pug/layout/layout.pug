@@ -26,6 +26,10 @@ html.page(lang='ru')
       +site-footer(class='page__site-footer')
       +socials
     block modals
+      +modal(data-modal='feedback-form')
+        +feedback-modal-form
+      +modal(data-modal='price-form')
+        +price-modal-form
     script(src='vendor/swiper/swiper-bundle.min.js')
     script(src='vendor/pristine/pristine.min.js')
     script(src='js/script.js')

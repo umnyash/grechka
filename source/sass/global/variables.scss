@@ -15,6 +15,4 @@ $centerer-max-width: 1680px;
 // Timings
 $duration-xs: 200ms;
 $duration-s: 300ms;
-$duration-m: 400ms;
-$duration-l: 500ms;
-$duration-xxl: 1000ms;
+$duration-m: 400ms; // Соответствует MODAL_ANIMATION_DURATION в const.js

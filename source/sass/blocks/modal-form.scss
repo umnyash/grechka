@@ -1,0 +1,80 @@
+.modal-form {
+  color: var(--text-color);
+}
+
+.modal-form__inner {
+  display: grid;
+}
+
+.modal-form__header {
+  margin: 0 0 27px;
+}
+
+.modal-form__heading {
+  margin: 0 40px 0 0;
+
+  @media (min-width: $tablet-width) {
+    margin-right: 48px;
+  }
+}
+
+.modal-form__main {
+  display: grid;
+  row-gap: 22px;
+}
+
+.modal-form__files-field {
+  margin-top: 4px;
+}
+
+.modal-form__footer {
+  display: grid;
+  margin: 32px 0 0;
+  row-gap: 8px;
+
+  @media (min-width: $wide-tablet-width) {
+    justify-items: start;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 40px;
+  }
+}
+
+.modal-form__small {
+  padding: 0 16px 0 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--text-additional-color);
+
+  @media (min-width: $wide-tablet-width) {
+    max-width: 350px;
+  }
+}
+
+.modal-form__small-link {
+  text-decoration-color: transparent;
+  color: inherit;
+  transition: color $duration-s ease-in-out, text-decoration-color $duration-xs ease-in;
+
+  &[href]:hover {
+    color: var(--accent-color);
+  }
+
+  &[href]:active {
+    text-decoration-color: currentColor;
+    color: var(--accent-color);
+  }
+}
+
+.modal-form--price .modal-form__main {
+  @media (min-width: $wide-tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+  }
+
+  .modal-form__comment-field,
+  .modal-form__files-field {
+    grid-column: 1 / -1;
+  }
+}

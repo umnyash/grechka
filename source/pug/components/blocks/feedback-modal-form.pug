@@ -1,0 +1,29 @@
+mixin feedback-modal-form
+  form.modal-form(action='https://fakestoreapi.com/products' method='post' target='_blank')&attributes(attributes)
+    .modal-form__inner
+      .modal-form__header
+        h2.modal-form__heading.heading Обратный звонок
+      .modal-form__main
+        +text-field({
+          label: 'Имя:',
+          type: 'text',
+          name: 'name',
+          placeholder: 'Имя',
+          required: true,
+          dataName: 'name'
+        })
+        +text-field({
+          label: 'Телефон:',
+          type: 'tel',
+          name: 'phone',
+          placeholder: 'Телефон',
+          required: true,
+          dataName: 'phone'
+        })
+      .modal-form__footer
+        +button({
+          tag: 'button',
+          text: 'Отправить',
+          type: 'submit'
+        })(class='modal-form__submit-button button--primary' data-submit-button)
+        small.modal-form__small Нажимая на кнопку «Отправить», вы даете согласие на #[a.modal-form__small-link обработку персональных данных]

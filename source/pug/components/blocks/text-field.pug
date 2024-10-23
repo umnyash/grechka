@@ -1,0 +1,12 @@
+mixin text-field({ label, name, type, placeholder, required })
+  .text-field&attributes(attributes)
+    label.text-field__inner
+      span.visually-hidden= label
+      span.text-field__control-wrapper
+        input.text-field__control(
+          name= name
+          type= type
+          placeholder= placeholder
+          required= required && ''
+          data-name= required && name
+        )

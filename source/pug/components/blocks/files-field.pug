@@ -1,0 +1,9 @@
+mixin files-field
+  .files-field&attributes(attributes)
+    .files-field__files.files-field__files--hidden
+      p.files-field__heading Прикрепленные файлы:
+      ul.files-field__list
+    .files-field__button-wrapper
+      label.files-field__button Прикрепить файл
+        input.files-field__control.visually-hidden(type='file' multiple accept='image/png, image/jpg, image/jpeg, .pdf, application/pdf, .doc, .docx, .xml, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+      p.files-field__comment Разрешенные форматы: PDF, JPEG, PNG, WEBP, DOC

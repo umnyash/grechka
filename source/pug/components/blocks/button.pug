@@ -1,3 +1,9 @@
-mixin button({ tag, text, type, href, rel })
-  #{tag}.button(type= type href= href rel= rel)&attributes(attributes)
+mixin button({ tag, text, type, href, target, rel, modalOpener })
+  #{tag}.button(
+    type= type
+    href= href
+    target= target
+    rel= rel
+    data-modal-opener= modalOpener
+  )&attributes(attributes)
     span.button__text!= text

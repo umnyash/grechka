@@ -1,0 +1,158 @@
+.files-field {
+  font: 400 14px/17px $main-font-family;
+
+  @media (min-width: $wide-desktop-width) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.files-field__files {
+  margin: 0 0 23px;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.files-field__heading {
+  margin: 0 0 8px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 16px;
+  }
+}
+
+.files-field__error-text {
+  margin: 0;
+  color: var(--error-color);
+}
+
+.files-field__list {
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 17px;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+  }
+
+  &:empty {
+    margin: 0;
+  }
+}
+
+.files-field__list:not(:empty) + .files-field__error-text {
+  margin-top: 8px;
+}
+
+.files-field__list-item {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 8px;
+  justify-content: start;
+}
+
+.files-field__list-item + .files-field__list-item {
+  margin-top: 8px;
+}
+
+.files-field__file-name {
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.files-field__flle-delete-button {
+  align-self: start;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    mask: url("../img/icons.svg#controls_cross");
+    transition: color $duration-s ease-in-out, transform $duration-xs ease-in;
+  }
+
+  &:hover::before {
+    color: var(--error-color);
+  }
+
+  &:active::before {
+    color: var(--error-color);
+    transform: scale(0.85);
+  }
+}
+
+.files-field__button-wrapper {
+  display: grid;
+  gap: 8px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}
+
+.files-field__button {
+  justify-self: start;
+  display: grid;
+  padding: 13px 20px;
+  border-radius: 6px;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: center;
+  font-size: 12px;
+  line-height: 14px;
+  background: var(--background-additional-color-4);
+  cursor: pointer;
+  transition: box-shadow $duration-s ease-in-out;
+
+  @media (min-width: $wide-desktop-width) {
+    padding-bottom: 12px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: currentColor;
+    mask: url("../img/icons.svg#controls_paper-clip");
+    transition: transform $duration-xs ease-in;
+  }
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 5px 15px 0 rgba(169, 207, 192, 0.46);
+  }
+
+  &:active {
+    box-shadow: 0 3px 6px 0 rgba(169, 207, 192, 0.46);
+
+    &::before {
+      transform: translateX(2px);
+    }
+  }
+}
+
+.files-field__comment {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--text-additional-color);
+}

@@ -63,3 +63,29 @@
     box-shadow: 0 3px 6px 0 rgba(169, 207, 192, 0.46);
   }
 }
+
+.button--pending {
+  position: relative;
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border: 4px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: button-spinner 600ms linear infinite;
+  }
+
+  &.button--secondary {
+    color: var(--text-color);
+  }
+
+  .button__text {
+    opacity: 0;
+  }
+}

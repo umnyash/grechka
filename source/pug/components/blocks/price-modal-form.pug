@@ -1,0 +1,34 @@
+mixin price-modal-form
+  form.modal-form.modal-form--price(action='https://fakestoreapi.com/products' method='post' enctype='multipart/form-data' target='_blank')&attributes(attributes)
+    .modal-form__inner
+      .modal-form__header
+        h2.modal-form__heading.heading Рассчитать стоимость
+      .modal-form__main
+        +text-field({
+          label: 'Имя:',
+          type: 'text',
+          name: 'name',
+          placeholder: 'Имя',
+          required: true
+        })
+        +text-field({
+          label: 'Телефон:',
+          type: 'tel',
+          name: 'phone',
+          placeholder: 'Телефон',
+          required: true
+        })
+        +text-field({
+          label: 'Комментарий:',
+          type: 'text',
+          name: 'comment',
+          placeholder: 'Комментарий',
+        })(class='modal-form__comment-field')
+        +files-field(class='modal-form__files-field')
+      .modal-form__footer
+        +button({
+          tag: 'button',
+          text: 'Отправить',
+          type: 'submit'
+        })(class='modal-form__submit-button button--primary' data-submit-button)
+        small.modal-form__small Нажимая на кнопку «Отправить», вы даете согласие на #[a.modal-form__small-link обработку персональных данных]

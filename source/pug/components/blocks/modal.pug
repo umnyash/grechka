@@ -1,0 +1,6 @@
+mixin modal
+  dialog.modal&attributes(attributes)
+    .modal__inner
+      button.modal__close-button(type='button' data-modal-close-button)
+        span.visually-hidden Закрыть
+      block
