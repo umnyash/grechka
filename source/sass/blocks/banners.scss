@@ -41,8 +41,19 @@
   border: none;
   border-radius: 100px;
   background: var(--text-light-color);
-  transition: backround-color $duration-m ease-in-out;
+  overflow: hidden;
   cursor: pointer;
+  transition: backround-color $duration-m ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform-origin: left center;
+  }
 
   &::before {
     content: "";
@@ -53,8 +64,9 @@
     left: 0;
   }
 
-  &--current {
+  &--current::after {
     background: var(--accent-color);
+    transform: scaleX(var(--slider-progress));
   }
 
   @media (min-width: $tablet-width) {

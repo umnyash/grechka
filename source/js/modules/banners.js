@@ -10,6 +10,10 @@ function initBanners(bannersElement) {
       crossFade: true
     },
     loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false
+    },
     pagination: {
       el: '.banners__slider-pagination',
       bulletClass: 'banners__slider-pagination-button',
@@ -17,6 +21,11 @@ function initBanners(bannersElement) {
       renderBullet: getPaginationButtonCreator(),
       clickable: true
     },
+    on: {
+      autoplayTimeLeft: (_s, _time, progress) => {
+        sliderElement.style.setProperty('--slider-progress', 1 - progress);
+      }
+    }
   })
 }
 /* * * * * * * * * * * * * * * * * * * * * * * */
