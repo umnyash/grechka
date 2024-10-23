@@ -48,7 +48,13 @@
   background: var(--accent-color);
   color: var(--text-light-color);
   cursor: pointer;
-  transition: $duration-s;
+  transition-property: transform, visibility;
+  transition-duration: $duration-s;
+  transition-timing-function: ease-in-out;
+
+  &--hidden {
+    visibility: hidden;
+  }
 
   @media (max-width: ($desktop-width - 1)) {
     display: none;
