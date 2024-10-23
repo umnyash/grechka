@@ -28,7 +28,7 @@
 
   @media (min-width: $laptop-width) {
     top: 0;
-    padding-bottom: 0;
+    padding-top: 32px;
 
     &::before {
       display: none;

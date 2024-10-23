@@ -14,3 +14,17 @@ mixin social-link(type)
         rel='noopener'
       )&attributes(attributes)
         span.social-link__icon(style='mask-image: url("img/icons.svg#socials_instagram")' role='img' aria-label='Instagram')
+    when 'linkedin'
+      a.social-link(
+        href='#'
+        target='_blank'
+        rel='noopener'
+      )&attributes(attributes)
+        span.social-link__icon(style='mask-image: url("img/icons.svg#socials_linkedin")' role='img' aria-label='LinkedIn')
+    when 'facebook'
+      a.social-link(
+        href='#'
+        target='_blank'
+        rel='noopener'
+      )&attributes(attributes)
+        span.social-link__icon(style='mask-image: url("img/icons.svg#socials_facebook")' role='img' aria-label='Facebook.')
