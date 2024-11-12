@@ -35,7 +35,7 @@ function initFormResending(form, alert) {
 
   function onFormSubmitEnd() {
     form.removeListener(FormEvents.SUBMIT_END, onFormSubmitEnd);
-    alert.close();
+    alert?.close();
   }
 }
 /* * * * * * * * * * * * * * * * * * * * * * * */
