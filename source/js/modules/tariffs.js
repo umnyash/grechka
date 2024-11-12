@@ -59,12 +59,11 @@ function initTariffs() {
         slidesPerView: 5,
         spaceBetween: 16,
       },
-    },
-    on: {
-      toEdge: () => {
-        toggleTariffsNavigationButtons(slider);
-      }
     }
+  })
+
+  slider.on('toEdge', () => {
+    toggleTariffsNavigationButtons(slider);
   })
 
   toggleTariffsNavigationButtons(slider);
