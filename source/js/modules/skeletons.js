@@ -1,19 +1,33 @@
 function initSkeleton(skeletonElement) {
   const imgElement = skeletonElement.querySelector('img');
+  const videoElement = skeletonElement.querySelector('video');
+  const mediaElement = imgElement || videoElement;
 
-  if (imgElement) {
-    if (imgElement.complete) {
+  if (mediaElement) {
+    const isLoaded = imgElement ? imgElement.complete : videoElement.readyState >= 1;
+
+    if (isLoaded) {
       skeletonElement.classList.add('skeleton--loaded');
     } else {
-      imgElement.addEventListener('load', () => skeletonElement.classList.add('skeleton--loaded'), { once: true });
-    }
-  } else {
-    const videoElement = skeletonElement.querySelector('video');
+      const loadEvent = imgElement ? 'load' : 'loadeddata';
 
-    if (videoElement.readyState >= 1) {
-      skeletonElement.classList.add('skeleton--loaded');
-    } else {
-      videoElement.addEventListener('loadeddata', () => skeletonElement.classList.add('skeleton--loaded'), { once: true });
+      mediaElement.addEventListener(loadEvent, () => {
+        skeletonElement.classList.add('skeleton--loaded');
+      }, { once: true });
+
+      const observer = new MutationObserver(() => {
+        if ((imgElement && imgElement.complete) || (videoElement && videoElement.readyState >= 1)) {
+          skeletonElement.classList.add('skeleton--loaded');
+          observer.disconnect();
+        }
+      });
+      observer.observe(mediaElement, { attributes: true, attributeFilter: ['src'] });
+
+      setTimeout(() => {
+        if ((imgElement && imgElement.complete) || (videoElement && videoElement.readyState >= 1)) {
+          skeletonElement.classList.add('skeleton--loaded');
+        }
+      }, 1500);
     }
   }
 }
