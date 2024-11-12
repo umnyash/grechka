@@ -19,7 +19,7 @@ class Alert extends Modal {
           <section class="alert modal__alert">
             <h2 class="alert__heading heading">${heading}</h2>
             ${text ? `<p class="alert__text">${text}</p>` : ''}
-            <button class="alert__button button button--primary" type="button" ${status === 'success' && 'data-modal-close-button'}>
+            <button class="alert__button button button--primary" type="button" ${status === 'success' ? 'data-modal-close-button' : ''}>
               <span class="button__text">${status === 'error' ? 'Попробовать снова' : 'Закрыть'}</span>
             </button>
           </section>
