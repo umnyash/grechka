@@ -643,22 +643,34 @@ function showAlert({
 }
 function initSkeleton(skeletonElement) {
   const imgElement = skeletonElement.querySelector('img');
-  if (imgElement) {
-    if (imgElement.complete) {
+  const videoElement = skeletonElement.querySelector('video');
+  const mediaElement = imgElement || videoElement;
+  if (mediaElement) {
+    const isLoaded = imgElement ? imgElement.complete : videoElement.readyState >= 1;
+    if (isLoaded) {
       skeletonElement.classList.add('skeleton--loaded');
     } else {
-      imgElement.addEventListener('load', () => skeletonElement.classList.add('skeleton--loaded'), {
+      const loadEvent = imgElement ? 'load' : 'loadeddata';
+      mediaElement.addEventListener(loadEvent, () => {
+        skeletonElement.classList.add('skeleton--loaded');
+      }, {
         once: true
       });
-    }
-  } else {
-    const videoElement = skeletonElement.querySelector('video');
-    if (videoElement.readyState >= 1) {
-      skeletonElement.classList.add('skeleton--loaded');
-    } else {
-      videoElement.addEventListener('loadeddata', () => skeletonElement.classList.add('skeleton--loaded'), {
-        once: true
+      const observer = new MutationObserver(() => {
+        if (imgElement && imgElement.complete || videoElement && videoElement.readyState >= 1) {
+          skeletonElement.classList.add('skeleton--loaded');
+          observer.disconnect();
+        }
       });
+      observer.observe(mediaElement, {
+        attributes: true,
+        attributeFilter: ['src']
+      });
+      setTimeout(() => {
+        if (imgElement && imgElement.complete || videoElement && videoElement.readyState >= 1) {
+          skeletonElement.classList.add('skeleton--loaded');
+        }
+      }, 1500);
     }
   }
 }
@@ -743,12 +755,10 @@ function initTariffs() {
         slidesPerView: 5,
         spaceBetween: 16
       }
-    },
-    on: {
-      toEdge: () => {
-        toggleTariffsNavigationButtons(slider);
-      }
     }
+  });
+  slider.on('toEdge', () => {
+    toggleTariffsNavigationButtons(slider);
   });
   toggleTariffsNavigationButtons(slider);
   firstSlideNavigationButtonElement.addEventListener('click', () => {
