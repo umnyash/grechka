@@ -827,6 +827,6 @@ priceModal.setHandlers(() => {
   showAlert(successAlert);
 }, () => {
   const alert = showAlert(errorAlert);
-  initFormResending(feedbackModal.form, alert);
+  initFormResending(priceModal.form, alert);
 });
 /* * * * * * * * * * * * * * * * * * * * * * * */
