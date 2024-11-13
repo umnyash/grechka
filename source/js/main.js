@@ -43,7 +43,7 @@ priceModal.setHandlers(
   },
   () => {
     const alert = showAlert(errorAlert);
-    initFormResending(feedbackModal.form, alert);
+    initFormResending(priceModal.form, alert);
   }
 );
 /* * * * * * * * * * * * * * * * * * * * * * * */
